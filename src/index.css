@@ -1,0 +1,186 @@
+@import './styles/animations.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #000000 0%, #1a0b2e 50%, #000000 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Focus styles */
+*:focus {
+  outline: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #8B5CF6;
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: #ffffff;
+}
+
+/* Prevent horizontal scroll */
+html {
+  overflow-x: hidden;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom slider styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8B5CF6, #22D3EE, #F59E0B);
+  cursor: pointer;
+  border: 2px solid #1F2937;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6), 0 0 24px rgba(139, 92, 246, 0.3);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.8), 0 0 32px rgba(139, 92, 246, 0.4);
+}
+
+.slider::-webkit-slider-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #374151, #4B5563, #374151);
+}
+
+.slider::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8B5CF6, #22D3EE, #F59E0B);
+  cursor: pointer;
+  border: 2px solid #1F2937;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6), 0 0 24px rgba(139, 92, 246, 0.3);
+}
+
+.slider::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #374151, #4B5563, #374151);
+}
+
+/* Enhanced focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8B5CF6;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+}
+
+/* Persistent Player Styles */
+.persistent-player-backdrop {
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(0, 0, 0, 0.8) 50%, 
+    transparent 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Enhanced slider for persistent player */
+.persistent-player .slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8B5CF6, #EC4899);
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+  transition: all 0.2s ease;
+}
+
+.persistent-player .slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+}
+
+.persistent-player .slider::-webkit-slider-track {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(75, 85, 99, 0.5);
+}
+
+.persistent-player .slider::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #8B5CF6, #EC4899);
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+.persistent-player .slider::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(75, 85, 99, 0.5);
+}
+
+/* Smooth transitions for player state changes */
+.persistent-player-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure content doesn't get hidden behind persistent player */
+body.has-persistent-player {
+  padding-bottom: 80px;
+}
+
+body.has-persistent-player.expanded {
+  padding-bottom: 256px;
+}
+
+/* Hide any floating players when persistent player is active */
+.persistent-player-active .floating-player {
+  display: none !important;
+}
+
+/* Animation for player appearance */
+@keyframes slideUpFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFromBottom 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

@@ -1,0 +1,189 @@
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fade-in-fast {
+  from { 
+    opacity: 0; 
+    transform: translateY(5px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes playhead {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.6), 0 0 24px rgba(168, 85, 247, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(168, 85, 247, 1), 0 0 40px rgba(168, 85, 247, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-blob { animation: blob 7s infinite; }
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-fade-in-fast { animation: fade-in-fast 0.2s ease-out forwards; }
+.animate-playhead { animation: playhead 30s linear; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 3s linear infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+
+/* Enhanced pulse glow for onboarding */
+@keyframes pulse-glow-strong {
+  0%, 100% { 
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.8), 0 0 32px rgba(168, 85, 247, 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 24px rgba(168, 85, 247, 1), 0 0 48px rgba(168, 85, 247, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow-strong { animation: pulse-glow-strong 2s ease-in-out infinite; }
+
+/* Nightclub vibe animations */
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes beat-pulse {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.02); }
+}
+
+@keyframes dj-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-neon-glow { animation: neon-glow 2s ease-in-out infinite; }
+.animate-beat-pulse { animation: beat-pulse 1s ease-in-out infinite; }
+.animate-dj-spin { animation: dj-spin 8s linear infinite; }
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.8);
+}
+
+/* Crossfader slider styling */
+.crossfader-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 24px;
+  width: 12px;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #8B5CF6, #22D3EE);
+  cursor: pointer;
+  border: 2px solid #1F2937;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+.crossfader-slider::-webkit-slider-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #8B5CF6 0%, #374151 50%, #22D3EE 100%);
+}
+
+.crossfader-slider::-moz-range-thumb {
+  height: 24px;
+  width: 12px;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #8B5CF6, #22D3EE);
+  cursor: pointer;
+  border: 2px solid #1F2937;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+.crossfader-slider::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #8B5CF6 0%, #374151 50%, #22D3EE 100%);
+}
+
+/* Glass morphism effect */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Button hover effects */
+.btn-glow:hover {
+  box-shadow: 0 12px 35px rgba(168, 85, 247, 0.4), 0 0 20px rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-glow:active {
+  transform: translateY(0) scale(1);
+}
+
+/* DJ/Nightclub specific styles */
+.dj-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.dj-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.dj-button:hover::before {
+  left: 100%;
+}
